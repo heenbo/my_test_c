@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#define PORT 1111 /*使用的port*/
+#define PORT 12338 /*使用的port*/
 
 int main(void)
 {
@@ -35,6 +35,7 @@ int main(void)
 		printf("receive from %s\n" , inet_ntoa( addr.sin_addr));
 		/*将字串返回给client端*/
 		sendto(sockfd,buffer,len,0,(struct sockaddr *)&addr,addr_len);
+		printf("buffer:%s\n", buffer);
 	}
 	return 0;
 }
