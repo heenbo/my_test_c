@@ -1,0 +1,5 @@
+-53510.321 VIDEO_CODE_TYPE_DLNA_HTTP "dlna:http://oezhsh6mx.bkt.clouddn.com/video/英语/多纳日常英语/yinyu1.mp4"
++53528.4321 VIDEO_CODE_TYPE_DLNA_HTTP "dlna:http://oezhsh6mx.bkt.clouddn.com/video/百科/小熊嘟啦/baike3.mp4"
+53543 VIDEO_CODE_TYPE_DLNA_HTTP "dlna:http://oezhsh6mx.bkt.clouddn.com/video/国学/弟子规/guoxue3.mp4"
+abc VIDEO_CODE_TYPE_WEBVIEW "http://192.168.199.244/jgs/jgs/index.html"
+53588 VIDEO_CODE_TYPE_WEBVIEW "http://192.168.199.244/jgs/jgs/index.html"
