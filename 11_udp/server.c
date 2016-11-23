@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#define PORT 12338 /*使用的port*/
+#define PORT 12121/*使用的port*/
 
 int main(void)
 {

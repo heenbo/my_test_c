@@ -6,8 +6,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#if 0
 #define PORT 12338
-#define SERVER_IP "127.0.0.1"
+#define SERVER_IP "192.168.199.244"
+#else
+#define PORT 16161
+#define SERVER_IP "192.168.199.235"
+#endif
 int main(void)
 {
 	int s,len;
@@ -24,15 +29,16 @@ int main(void)
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(PORT);
 	addr.sin_addr.s_addr = inet_addr(SERVER_IP);
-	while(1){
+	while(1)
+	{
 		bzero(buffer,sizeof(buffer));
 		/* 从标准输入设备取得字符串*/
 		len =read(STDIN_FILENO,buffer,sizeof(buffer));
 		/* 将字符串传送给server端*/
 		sendto(s,buffer,len,0,(struct sockaddr *)&addr,addr_len);
 		/* 接收server端返回的字符串*/
-		len = recvfrom(s,buffer,sizeof(buffer),0,(struct sockaddr *)&addr,&addr_len);
-		printf("receive: %s",buffer);
+//		len = recvfrom(s,buffer,sizeof(buffer),0,(struct sockaddr *)&addr,&addr_len);
+//		printf("receive: %s",buffer);
 	}
 	return 0;
 }
