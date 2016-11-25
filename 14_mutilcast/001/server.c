@@ -19,8 +19,8 @@
 #include <sys/types.h>
 
 
-#define MCAST_PORT 8888
-#define MCAST_ADDR "224.0.0.100"    /*一个局部连接多播地址，路由器不进行转发*/
+#define MCAST_PORT 8789
+#define MCAST_ADDR "224.0.0.1"    /*一个局部连接多播地址，路由器不进行转发*/
 #define MCAST_DATA "hahahah BROADCAST TEST DATA"            /*多播发送的数据*/
 #define MCAST_INTERVAL 5                            /*发送间隔时间*/
 
@@ -40,11 +40,15 @@ int main(int argc, char * argv[])
 	mcast_addr.sin_addr.s_addr = inet_addr(MCAST_ADDR);/*设置多播IP地址*/
 	mcast_addr.sin_port = htons(MCAST_PORT);        /*设置多播端口*/
 
+	int iii = 0;
+	char buf[100] = {0};
 	/*向多播地址发送数据*/
 	while(1) {
+		iii++;
+		sprintf(buf, "hahahaha %d\n", iii);
 		int n = sendto(s,                           /*套接字描述符*/
-				MCAST_DATA,     /*数据*/
-				sizeof(MCAST_DATA),    /*长度*/
+				buf,     /*数据*/
+				strlen(buf),    /*长度*/
 				0,
 				(struct sockaddr*)&mcast_addr,
 				sizeof(mcast_addr)) ;

@@ -18,8 +18,8 @@
 #include <errno.h>
 #include <sys/types.h>
 
-#define MCAST_PORT 8888
-#define MCAST_ADDR "224.0.0.100"     /*一个局部连接多播地址，路由器不进行转发*/
+#define MCAST_PORT 8789
+#define MCAST_ADDR "224.0.0.1"     /*一个局部连接多播地址，路由器不进行转发*/
 #define MCAST_INTERVAL 5                        /*发送间隔时间*/
 #define BUFF_SIZE 256                           /*接收缓冲区大小*/
 int main(int argc, char * argv[])
@@ -74,7 +74,8 @@ int main(int argc, char * argv[])
 	char buff[BUFF_SIZE];
 	int n = 0;
 	/*循环接收多播组的消息，5次后退出*/
-	for(times = 0;times<5;times++)
+	//for(times = 0;times<50;times++)
+	for(;;)
 	{
 		addr_len = sizeof(local_addr);
 		memset(buff, 0, BUFF_SIZE);                 /*清空接收缓冲区*/
