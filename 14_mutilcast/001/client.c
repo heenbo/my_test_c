@@ -87,7 +87,7 @@ int main(int argc, char * argv[])
 		}
 		/*打印信息*/
 		printf("Recv %dst message from server:%s\n", times, buff);
-		sleep(MCAST_INTERVAL);
+//		sleep(MCAST_INTERVAL);
 	}
 
 	/*退出多播组*/

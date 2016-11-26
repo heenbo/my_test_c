@@ -7,3 +7,5 @@
 mkespfsimage
 *.espfs
 .output/
+client
+server
