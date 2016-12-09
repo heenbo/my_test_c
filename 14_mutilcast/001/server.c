@@ -20,7 +20,8 @@
 
 
 #define MCAST_PORT 8789
-#define MCAST_ADDR "224.0.0.1"    /*一个局部连接多播地址，路由器不进行转发*/
+//#define MCAST_ADDR "224.0.0.1"    /*一个局部连接多播地址，路由器不进行转发*/
+#define MCAST_ADDR "239.255.255.250"    /*一个局部连接多播地址，路由器不进行转发*/
 #define MCAST_DATA "hahahah BROADCAST TEST DATA"            /*多播发送的数据*/
 #define MCAST_INTERVAL 5                            /*发送间隔时间*/
 
